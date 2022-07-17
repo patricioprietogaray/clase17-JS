@@ -7,8 +7,20 @@
     <title>Document</title>
 </head>
 <body>
+    <!-- template (plantilla), todo lo que se mete -->
+    <!-- en la plantilla no se renderiza en el DOM. -->
+    <!-- esto permite poder copiar y luego agregar -->
+    <!-- el contenido. -->
     <section class="cards">
-        <!-- se agrega el codigo desde JS -->
+        <template id="template-card">
+            <!-- si completo los datos no sale en 
+            el DOM por tratarse de un template -->
+            <figure class="card">
+                <img>
+                <figcaption>
+                </figcaption>
+            </figure>
+        </template>
     </section>
 
     <script src="./index.js"></script>
