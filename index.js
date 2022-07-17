@@ -38,7 +38,7 @@ cardContent.forEach((el) => {
     $template.querySelector("img").setAttribute("src", el.img);
     $template.querySelector("img").setAttribute("alt", el.title);
     $template.querySelector("img").setAttribute("width", "150");
-    $template.querySelector("img").setAttribute("style", "margin: 2rem;");
+    $template.querySelector("img").setAttribute("style", "margin-left: 7rem;");
     
     
 
