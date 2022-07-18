@@ -246,6 +246,33 @@ function average(a, b) {
 let x = average(10, 20);
 https://www.javascripttutorial.net/wp-content/uploads/2019/12/JavaScript-Call-Stack.png
 ///////////
+// Código asincrónico
+console.log("Código asincrónico");
+console.log("Inicio");
+
+function dos() {
+    setTimeout(function(){
+        console.log("dos");
+    }, 1000)
+}
+
+function uno() {
+    setTimeout(function(){
+        console.log("uno");
+    }, 0);
+    dos();
+    console.log("tres");
+}
+
+uno();
+console.log("Fin");
+
+// inicio, tres, fin, uno, dos
+// uno queda en segundo lugar
+// dos queda en tercer lugar
+
+//////
+
 
 
 
