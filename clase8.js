@@ -271,7 +271,62 @@ console.log("Fin");
 // uno queda en segundo lugar
 // dos queda en tercer lugar
 
-//////
+//////JSON
+
+const amigos = [
+    {
+        id: "1",
+        nombre: "pepe",
+    },
+    {
+        id: "2",
+        nombre: "pepa",
+    },
+] 
+
+console.log(amigos);
+const amigosJson = JSON.stringify(amigos);
+console.log(amigosJson);
+
+
+////////Promesas
+
+// las promesas son creadas a partir del constructor
+// promise, el cual recibo como parámetro un callback
+// que maneja tanto la resolucion como el rechazo de la 
+// promesa.
+// la promesa tiene tres estados:
+// * pending: pendiente, estado inicial, no esta ni
+//        cumplida ni rechazada.
+// * fulfilled: operacion fue exitosa
+// * rejected: la operación falló.
+
+let promesa = new Promise(function (reject, resolve) {
+    // código a ejecutar
+});
+
+// consumiendo promesas
+// se maneja en tres casos: exito, error y 
+// estado final. Cada uno recibe un callback
+// * then: casos de exito, el callback se ejecuta
+// cuando la promesa se cumple.
+// * catch: el callback se ejecuta cuando se rechaza
+// o hay error
+// * finally: el callback se ejecuta cuando la promesa 
+// esta saldada (settled) se cumpla o no.
+
+promesa
+    .then( () => {
+        console.log('Promesa cumplida');
+    })
+    .catch( (error) => {
+        console.log('Promesa rechazada', error);
+    })
+    .finally( () => {
+        console.log('Promesa saldada');
+    })
+
+/////////
 
 
 
