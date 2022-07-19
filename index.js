@@ -55,7 +55,11 @@ const $fetch = document.getElementById("fetch"), //me posiciono en el id fetch
 fetch('https://jsonplaceholder.typicode.com/users')
 // para forzar la respuesta del catch
     .then($res => $res.ok ? $res.json() : Promise.reject($res))
+    // cuando es ok retorna $res.json() y el segundo .then lo toma
+    // .then($res => $res.ok ? 'hola' : Promise.reject($res))
     .then($json => {
+    // .then($json => {
+    //     console.log($json);
         $json.forEach(usuario => {
             const $li = document.createElement("li");
             $li.innerHTML = `${usuario.name} -- ${usuario.email}`;
@@ -65,7 +69,15 @@ fetch('https://jsonplaceholder.typicode.com/users')
     })
      .catch($err => { 
 
-        const mensaje = `<p>Ocurrió un error ${$err.status}!</p>`;
-        document.write(mensaje);
+        const mensaje = 'Ocurrió un error';
+        // `<p>Ocurrió un error ${$err.status}!</p>`;
+        // document.write(mensaje);
+        $fetch.innerHTML = `Error ${$err.status}: ${mensaje}`
         console.log($err);
      }) 
+     .finally(() => {
+        // $fetch.innerHTML = "Terminó de cargar!";
+        // si uso el dom no muestra el resultado o error
+        console.log('Terminó de cargar!')
+     })
+ 
